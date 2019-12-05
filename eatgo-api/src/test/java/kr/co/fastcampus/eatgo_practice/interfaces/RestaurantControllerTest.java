@@ -20,6 +20,11 @@ public class RestaurantControllerTest {
     public void list() throws Exception {
         mvc.perform(get("/restaurants"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Bob zip")));
+                .andExpect(content().string(
+                        containsString("\"id\":1004")
+                ))
+                .andExpect(content().string(
+                        containsString("\"name\":\"Bob zip\"")
+                ));
     }
 }
