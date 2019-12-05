@@ -1,1 +1,3 @@
 rootProject.name = 'eatgo_practice'
+
+inlcude 'eatgo-api'
