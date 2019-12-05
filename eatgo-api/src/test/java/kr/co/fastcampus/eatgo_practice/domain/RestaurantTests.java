@@ -9,8 +9,14 @@ public class RestaurantTests {
 
     @Test
     public void creation() {
-        Restaurant restaurant = new Restaurant("Bob zip");
+        Restaurant restaurant = new Restaurant("Bob zip", "");
         assertThat(restaurant.getName(), is("Bob zip"));
+    }
+
+    @Test
+    public void Information() {
+        Restaurant restaurant = new Restaurant("Bob zip", "Seoul");
+        assertThat(restaurant.getInformation(), is("Bob zip is Seoul"));
     }
 
 }
