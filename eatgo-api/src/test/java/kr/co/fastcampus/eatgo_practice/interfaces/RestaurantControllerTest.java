@@ -27,4 +27,10 @@ public class RestaurantControllerTest {
                         containsString("\"name\":\"Bob zip\"")
                 ));
     }
+
+    @Test
+    public void detail() throws Exception {
+        mvc.perform(get("/restaurants/1"))
+                .andExpect(status().isOk());
+    }
 }
