@@ -21,7 +21,13 @@ public class RestaurantController {
 
     @GetMapping("/restaurants/{id}")
     public Restaurant detail(@PathVariable("id") Long id) {
-        Restaurant restaurant = new Restaurant(1004L, "Bob zip", "Seoul");
+        Restaurant restaurant = null;
+        if(id == 1004L) {
+            restaurant = new Restaurant(1004L, "Bob zip", "Seoul");
+        }
+        if(id == 2020L) {
+            restaurant = new Restaurant(2020L, "Cyber Food", "Seoul");
+        }
         return restaurant;
     }
 }
