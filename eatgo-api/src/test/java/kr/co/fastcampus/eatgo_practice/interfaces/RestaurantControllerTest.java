@@ -1,8 +1,10 @@
 package kr.co.fastcampus.eatgo_practice.interfaces;
 
+import kr.co.fastcampus.eatgo_practice.domain.RestaurantRepositoryImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.core.StringContains.containsString;
@@ -15,6 +17,9 @@ public class RestaurantControllerTest {
 
     @Autowired
     private MockMvc mvc;
+
+    @SpyBean(RestaurantRepositoryImpl.class) //컨트롤러에 원하는 객체를 주입할 수 있다.
+    private RestaurantRepositoryImpl restaurantRepository;
 
     @Test
     public void list() throws Exception {
